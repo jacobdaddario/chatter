@@ -14,5 +14,13 @@
 	@apply w-full py-2 bg-orange-500 text-white text-center rounded shadow-md;
 }
 
+.title {
+	@apply mt-8 mb-4 text-center text-lg text-gray-900;
+}
+
+.card {
+	@apply mx-4 mt-24 px-6 bg-white border border-gray-300 shadow-xl rounded;
+}
+
 @tailwind components;
 @tailwind utilities;
