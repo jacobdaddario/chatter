@@ -7,12 +7,16 @@ class ChatroomsController < ApplicationController
 	end
 
 	def create
-		@chatroom = current_user.chatrooms.build
+		@chatroom = Chatroom.new(cbatroom_params)
 		authorize! :create, @chatroom
+
+		# Finish method here
 	end
 
 	def update
 		@chatroom = Chatroom.find(params[:id])
 		authorize! :update, @chatroom
+
+		# Finish method here
 	end
 end
