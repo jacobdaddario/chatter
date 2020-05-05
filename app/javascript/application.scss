@@ -2,5 +2,13 @@
 
 // Extracted classes go here so that inline Tailwind can override them
 
+.alert {
+	@apply text-red-700 bg-red-100 border-red-700;
+}
+
+.notice {
+	@apply text-green-800 bg-green-200 border-green-800
+}
+
 @tailwind components;
 @tailwind utilities;
