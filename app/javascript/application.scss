@@ -7,7 +7,11 @@
 }
 
 .notice {
-	@apply text-green-800 bg-green-200 border-green-800
+	@apply text-green-800 bg-green-200 border-green-800;
+}
+
+.btn {
+	@apply w-full py-2 bg-orange-500 text-white text-center rounded shadow-md;
 }
 
 @tailwind components;
