@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :rememberable
 
   validates :authorization, inclusion: { in: [0, 1] }
+
+  def admin?
+  	authorization == 1
+  end 
 end
