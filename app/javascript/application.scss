@@ -10,6 +10,14 @@
 	@apply text-green-800 bg-green-200 border-green-800;
 }
 
+.link {
+	@apply text-orange-600 text-lg underline;
+}
+
+.link:hover {
+	@apply text-orange-400;
+}
+
 .btn {
 	@apply w-full py-2 bg-orange-500 text-white text-center rounded shadow-md;
 }
@@ -19,7 +27,7 @@
 }
 
 .card {
-	@apply mx-4 mt-24 px-6 bg-white border border-gray-300 shadow-xl rounded;
+	@apply mx-4 mt-12 px-6 bg-white border border-gray-300 shadow-xl rounded;
 }
 
 @tailwind components;

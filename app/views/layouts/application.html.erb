@@ -11,6 +11,16 @@
   </head>
 
   <body class="bg-gray-100">
+    <div class="flex px-4 py-2 items-center">
+      <span id="logo" class="flex-grow text-orange-500 text-3xl text-bold tracking-tight">
+        Chatter
+      </span>
+      <% unless current_user %>
+        <%= link_to "Log In", new_user_session_path, class: "link text-gray-900 hover:text-gray-700" %>
+      <% else %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "link text-gray-900 hover:text-gray-500" %>
+      <% end %>
+    </div>
     <%= render 'layouts/flash' %>
     <div class="max-w-6xl mx-auto">
       <%= yield %>

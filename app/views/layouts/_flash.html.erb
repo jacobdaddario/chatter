@@ -1,6 +1,6 @@
 <% unless flash.empty? %>
 	<% flash.each do |flash_type, flash_message| %>
-		<div class="mb-4 py-4 w-full border-b border-b-2 text-center <%= flash_type %>">
+		<div class="mb-4 py-4 w-full border-b border-t border-b-2 text-center <%= flash_type %>">
 			<%= content_tag :p, flash_message %>
 		</div>
 	<% end %>
