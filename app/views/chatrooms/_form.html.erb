@@ -1,0 +1,8 @@
+<div class="p-2" data-controller="temp-form">	
+	<%= form_for chatroom do |f| %>
+		<%= f.label :name, class: "invisible block h-0" %>
+		<%= f.text_field :name, class: "form-input w-full", data: { target: "temp-form.input", action: "blur->temp-form#remove" } %>
+
+		<%= f.submit class: "btn mt-2" %>
+	<% end %>
+</div>

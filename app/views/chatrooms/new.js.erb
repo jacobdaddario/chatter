@@ -1,0 +1,2 @@
+var newChatroom = document.querySelector("[data-behavior='new-chatroom']");
+newChatroom.insertAdjacentHTML('afterend', '<%= j render("chatrooms/form", chatroom: @chatroom) %>');
