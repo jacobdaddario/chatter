@@ -1,7 +1,11 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+    	margin: {
+    		'-14': '-3.5rem',
+    	}
+    },
   },
   variants: {},
   plugins: [

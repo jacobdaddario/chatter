@@ -1,21 +1,19 @@
 class ChatroomsController < ApplicationController
+	authorize_resource
 	before_action :authenticate_user!
 
 	def index
-		@chatrooms = Chatrooms.all
-		authorize! :index, @chatroom
+		@chatrooms = Chatroom.all
 	end
 
 	def create
 		@chatroom = Chatroom.new(cbatroom_params)
-		authorize! :create, @chatroom
 
 		# Finish method here
 	end
 
 	def update
 		@chatroom = Chatroom.find(params[:id])
-		authorize! :update, @chatroom
 
 		# Finish method here
 	end

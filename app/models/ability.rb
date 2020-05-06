@@ -4,10 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :index, Chatroom
+  	# Guest user instantiated if current_user returns nil
+  	user ||= User.new
 
-    if user.admin?
-      can :manage, Chatroom
-    end
+  	if user.persisted? 
+	    can :index, Chatroom
+
+	    if user.admin?
+	      can :manage, Chatroom
+	    end
+	  end
   end
 end
