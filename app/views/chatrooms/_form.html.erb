@@ -1,8 +1,8 @@
-<div class="p-2" data-controller="temp-form">	
+<div class="p-2" data-controller="temp-form" data-action="click@document->temp-form#remove">	
 	<%= form_for chatroom do |f| %>
 		<%= f.label :name, class: "invisible block h-0" %>
-		<%= f.text_field :name, class: "form-input w-full", data: { target: "temp-form.input", action: "blur->temp-form#remove" } %>
+		<%= f.text_field :name, class: "form-input w-full", data: { target: "temp-form.input" } %>
 
-		<%= f.submit class: "btn mt-2" %>
+		<%= f.submit class: "btn mt-2 disabled:bg-orange-400 disabled:shadow-none", data: { disable_with: "Submited!" } %>
 	<% end %>
 </div>

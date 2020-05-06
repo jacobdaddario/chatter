@@ -17,6 +17,12 @@ export default class extends Controller {
   };
 
   remove() {
+    if (event.currentTarget == document) {
+      if (this.element.contains(event.target)) {
+      	return null
+      };
+    };
+
     this.element.remove();
   };
 };
