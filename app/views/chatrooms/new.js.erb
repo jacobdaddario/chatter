@@ -1,2 +1,6 @@
 var newChatroom = document.querySelector("[data-behavior='new-chatroom']");
-newChatroom.insertAdjacentHTML('afterend', '<%= j render("chatrooms/form", chatroom: @chatroom) %>');
+var existingForm = document.querySelector("[data-behavior='new-chatroom-form'");
+
+if (existingForm == null) {
+	newChatroom.insertAdjacentHTML('afterend', '<%= j render("chatrooms/form", chatroom: @chatroom) %>');
+};
