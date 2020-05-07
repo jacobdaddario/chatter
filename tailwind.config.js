@@ -4,7 +4,10 @@ module.exports = {
     extend: {
     	margin: {
     		'-14': '-3.5rem',
-    	}
+    	},
+      maxHeight: {
+        '1/2-screen': '50vh',
+      }
     },
   },
   variants: {

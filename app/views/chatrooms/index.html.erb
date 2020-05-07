@@ -11,7 +11,7 @@
 				<% end %>
 				<%= inline_svg_tag "chevron_down.svg", class: "h-10 w-10 bg-white text-gray-600 fill-current", data: { action: "click->revealable#close"} %>
 			</div>			
-			<div data-behavior="chatroom-stack">
+			<div class="max-h-1/2-screen overflow-y-auto" data-behavior="chatroom-stack">
 				<%= render "chatrooms/chatrooms" %>
 			</div>
 		</div>

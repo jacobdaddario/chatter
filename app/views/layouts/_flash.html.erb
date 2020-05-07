@@ -2,7 +2,7 @@
 	<% flash.each do |flash_type, flash_message| %>
 		<div class="flex py-4 px-8 w-full border-b border-t border-b <%= flash_type %>" data-controller="flash revealable" data-target="revealable.revealedElement">
 			<%= content_tag :p, flash_message, class: "flex-grow" %>
-			<%= inline_svg_tag "x.svg", class: "text-red-700 fill-current h-10 w-10", data: { action: "click->revealable#close"} %>
+			<%= inline_svg_tag "x.svg", class: "h-8 w-8 #{flash_type} fill_current", data: { action: "click->revealable#close"} %>
 		</div>
 	<% end %>
 <% end %>
