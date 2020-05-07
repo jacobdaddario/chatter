@@ -4,7 +4,7 @@
 			<span class="flex-grow text-gray-600 font-light text-xl text-center">Chatrooms</span>
 			<%= inline_svg_tag "chevron_left.svg", class: "h-10 w-10 text-gray-600 fill-current", data: { action: "click->revealable#open" } %>
 		</div>
-		<div class="hidden relative z-10 card m-6 -mt-14 h-14 shadow-xl" data-target="revealable.revealedElement">
+		<div class="hidden relative z-10 card pb-8 m-6 -mt-14 h-14 shadow-xl" data-target="revealable.revealedElement">
 			<div class="flex items-center justify-end p-2" data-behavior="new-chatroom">
 				<% if can? :create, Chatroom %>
 					<%= link_to "Add Chatroom +", new_chatroom_path, remote: true, class: "flex-grow link" %>

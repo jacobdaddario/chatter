@@ -26,4 +26,8 @@ export default class extends Controller {
   		this.revealedElementTarget.classList.add("hidden");
   	};
   };
+
+  toggle() {
+    this.revealedElementTarget.classList.toggle("hidden");
+  };
 }
