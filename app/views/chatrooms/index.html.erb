@@ -10,19 +10,10 @@
 					<%= link_to "Add Chatroom +", new_chatroom_path, remote: true, class: "flex-grow link" %>
 				<% end %>
 				<%= inline_svg_tag "chevron_down.svg", class: "h-10 w-10 bg-white text-gray-600 fill-current", data: { action: "click->dropdown#close"} %>
+			</div>			
+			<div data-behavior="chatroom-stack">
+				<%= render "chatrooms/chatrooms" %>
 			</div>
-			<% unless @chatrooms.empty? %>
-				<% @chatrooms.each do |chatroom| %>
-					<div class="p-2">
-						<%= link_to chatroom.name, "#", class: "font-semibold text-lg" %>
-					</div>
-				<% end %>
-			<% else %>
-				<%= inline_svg_tag "add_channel.svg", class: "mt-6 mb-4 mx-auto h-auto w-full max-w-md" %>
-				<p class="text text-medium text-center tracking-wide my-6 lg:text-xl lg:tracking-normals">
-					Add a chatroom and get chatting!				
-				</p>
-			<% end %>
 		</div>
 	</div>
 </div>

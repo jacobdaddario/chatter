@@ -10,7 +10,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "input" ]
+  static targets = [ "input" ];
 
   connect() {
     this.inputTarget.focus()
@@ -25,4 +25,8 @@ export default class extends Controller {
 
     this.element.remove();
   };
+
+  clearInput() {
+    this.inputTarget.value = ""
+  }
 };

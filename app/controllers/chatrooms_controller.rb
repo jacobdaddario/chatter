@@ -15,7 +15,15 @@ class ChatroomsController < ApplicationController
 	def create
 		@chatroom = Chatroom.new(chatroom_params)
 
-		# Finish method here
+		if @chatroom.save
+			flash.now[:notice] = "Chatroom successfully created."
+		else
+			flash.now[:alert] = "Unable to create chatroom. Record had #{helpers.pluralize(@chatroom.errors.count, "error")}."
+		end
+
+		@chatrooms = Chatroom.all
+
+		respond_to :js
 	end
 
 	def edit

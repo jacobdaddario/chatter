@@ -1,0 +1,7 @@
+var flash = document.querySelector("[data-behavior='flash'");
+var errors = document.querySelector("[data-behavior='chatroom-errors'");
+var stack = document.querySelector("[data-behavior='chatroom-stack'");
+
+flash.innerHTML = "<%= j render('layouts/flash') %>";
+errors.innerHTML = "<%= j render('layouts/errors', errors: @chatroom.errors) %>";
+stack.innerHTML = "<%= j render('chatrooms/chatrooms') %>";
