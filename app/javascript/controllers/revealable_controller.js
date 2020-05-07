@@ -10,20 +10,20 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "mobileMenu" ]
+  static targets = [ "revealedElement" ]
 
   connect() {
   };
 
   open() {
-  	if (this.mobileMenuTarget.classList.contains("hidden")) {
-  		this.mobileMenuTarget.classList.remove("hidden");
+  	if (this.revealedElementTarget.classList.contains("hidden")) {
+  		this.revealedElementTarget.classList.remove("hidden");
   	};
   };
 
   close() {
-  	if (!this.mobileMenuTarget.classList.contains("hidden")) {
-  		this.mobileMenuTarget.classList.add("hidden");
+  	if (!this.revealedElementTarget.classList.contains("hidden")) {
+  		this.revealedElementTarget.classList.add("hidden");
   	};
   };
 }
