@@ -1,0 +1,6 @@
+var chatroom = document.querySelector("[data-chatroom-id='<%= params[:id] %>']")
+											 .parentNode
+var flash = document.querySelector("[data-behavior='flash'");
+
+flash.innerHTML = "<%= j render('layouts/flash') %>";
+chatroom.remove();

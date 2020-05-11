@@ -8,7 +8,7 @@
 			<div class="hidden mt-2" data-target="revealable.revealedElement">
 				<%= link_to "Edit", edit_chatroom_path(chatroom), remote: true, class: "link text-sm mr-6" %>
 				<%= link_to "Delete", chatroom_path(chatroom), method: :delete, remote: true, class: "link text-sm", data: { confirm: "Are you sure you'd like to delete #{chatroom.name}?" } %>
-			</div>
+			</div> 
 		</div>
 	<% end %>
 <% else %>
