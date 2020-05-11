@@ -47,9 +47,11 @@ class ChatroomsController < ApplicationController
 	end
 
 	def destroy
-		@chatroom = Chatroom.find(params[:id]);
+		@chatroom = Chatroom.find(params[:id])
 		@chatroom.delete
 		flash[:notice] = "The chatroom was successfully deleted."
+
+		@chatrooms = Chatroom.all
 
 		respond_to :js
 	end

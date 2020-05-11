@@ -1,6 +1,5 @@
-var chatroom = document.querySelector("[data-chatroom-id='<%= params[:id] %>']")
-											 .parentNode
+var stack = document.querySelector("[data-behavior='chatroom-stack'");
 var flash = document.querySelector("[data-behavior='flash'");
 
+stack.innerHTML = "<%= j render('chatrooms/chatrooms') %>";
 flash.innerHTML = "<%= j render('layouts/flash') %>";
-chatroom.remove();
