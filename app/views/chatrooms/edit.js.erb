@@ -1,0 +1,9 @@
+var editedChatroom = document.querySelector("[data-chatroom-id='<%= @chatroom.id %>'");
+var chatroomTitle = editedChatroom.querySelector("[data-behavior='chatroom-name']");
+
+var form = document.createElement("div");
+form.classList.add("flex");
+form.innerHTML = "<%= j render('chatrooms/form', chatroom: @chatroom) %>";
+
+chatroomTitle.classList.add("hidden");
+editedChatroom.prepend(form);

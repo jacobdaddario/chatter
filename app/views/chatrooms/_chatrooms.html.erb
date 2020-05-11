@@ -1,12 +1,13 @@
 <% unless @chatrooms.empty? %>
 	<% @chatrooms.each do |chatroom| %>
 		<div class="p-6 my-4 bg-gray-200 rounded-lg" data-controller="revealable">
-			<div class="flex">
-				<%= link_to chatroom.name, "#", class: "flex-grow mr-6 font-medium text-lg text-gray-900 hover:underline" %>
-				<%= inline_svg_tag "more_options.svg", class: "flex-shrink-0 h-6 w-6 text-gray-600 fill-current", data: { action: "click->revealable#toggle" } %>
+			<div class="flex" data-chatroom-id="<%= chatroom.id %>">
+				<%= link_to chatroom.name, "#", class: "flex-grow mr-6 font-medium text-lg text-gray-900 hover:underline", data: { behavior: "chatroom-name" } %>
+				<%= inline_svg_tag "more_options.svg", class: "flex-shrink-0 h-6 w-6 ml-2 text-gray-600 fill-current", data: { action: "click->revealable#toggle" } %>
 			</div>
 			<div class="hidden mt-2" data-target="revealable.revealedElement">
-				Blah blah blah links
+				<%= link_to "Edit", edit_chatroom_path(chatroom), remote: true, class: "link text-sm mr-6" %>
+				<%= link_to "Delete", chatroom_path(chatroom), method: :delete, remote: true, class: "link text-sm", data: { confirm: "Are you sure you'd like to delete #{chatroom.name}?" } %>
 			</div>
 		</div>
 	<% end %>

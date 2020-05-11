@@ -1,0 +1,16 @@
+var flash = document.querySelector("[data-behavior='flash'");
+var errors = document.querySelector("[data-behavior='chatroom-errors'");
+var oldText = document.querySelector("[data-chatroom-id='<%= @chatroom.id %>'")
+											.querySelector("[data-behavior='chatroom-name'");
+var form = document.querySelector("[data-temp-form-parent-id='<%= @chatroom.id %>']")
+
+flash.innerHTML = "<%= j render('layouts/flash') %>";
+errors.innerHTML = "<%= j render('layouts/errors', errors: @chatroom.errors) %>";
+
+<% if @chatroom.errors.empty? %>
+	oldText.href = "<%= j chatroom_path(@chatroom) %>";
+	oldText.text = "<%= j @chatroom.name %>";
+	oldText.classList.remove("hidden");
+
+	form.remove();
+<% end %>

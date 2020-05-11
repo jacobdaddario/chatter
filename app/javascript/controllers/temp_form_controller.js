@@ -16,6 +16,9 @@ export default class extends Controller {
     this.inputTarget.focus()
   };
 
+  // This whole weird conditional structure does not feel right. Will probably
+  // need to refactor everything at some point. Maybe move into different
+  // controllers.
   remove() {
     if (event.currentTarget == document) {
       if (this.element.contains(event.target)) {
@@ -23,10 +26,25 @@ export default class extends Controller {
       };
     };
 
+    var oldText = document.querySelector(`[data-chatroom-id='${this.data.get("parent-id")}'`);
+
+    if (!(oldText == null)) {
+      oldText.querySelector("[data-behavior='chatroom-name'")
+             .classList
+             .remove("hidden");
+    };
+
     this.element.remove();
   };
 
-  clearInput() {
-    this.inputTarget.value = ""
+  resetInput() {
+    var oldText = document.querySelector(`[data-chatroom-id='${this.data.get("parent-id")}'`);
+
+    if (!(oldText == null)) {
+      var oldName = oldText.querySelector("[data-behavior='chatroom-name'").text;
+      this.inputTarget.value = oldName
+    } else {
+      this.inputTarget.value = ""
+    };
   }
 };

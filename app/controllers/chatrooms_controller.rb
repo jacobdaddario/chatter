@@ -27,12 +27,23 @@ class ChatroomsController < ApplicationController
 	end
 
 	def edit
+		@chatroom = Chatroom.find(params[:id])
+
+		respond_to :js
 	end
 
 	def update
 		@chatroom = Chatroom.find(params[:id])
 
-		# Finish method here
+		if @chatroom.update(chatroom_params)
+			flash.now[:notice] = "Chatroom successfully updated."
+		else
+			flash.now[:alert] = "Unable to update chatroom. Record had #{helpers.pluralize(@chatroom.errors.count, "error")}."
+		end
+
+		@chatroom.reload
+
+		respond_to :js
 	end
 
 		private
