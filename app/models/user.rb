@@ -10,5 +10,17 @@ class User < ApplicationRecord
 
   def admin?
   	authorization == 1
-  end 
+  end
+
+  def subscribe(chatroom)
+  	chatrooms << chatroom
+  end
+
+  def unsubscribe(chatroom)
+  	chatrooms.delete(chatroom)
+  end
+
+  def subscribed?(chatroom)
+  	chatrooms.include?(chatroom)
+  end
 end

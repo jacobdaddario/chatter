@@ -8,6 +8,7 @@ class Ability
   	user ||= User.new
 
     can :index, Chatroom
+    can :manage, Subscription
 
     if user.admin?
       can :manage, Chatroom
