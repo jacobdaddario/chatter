@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
 	root to: 'chatrooms#index'
 
+  devise_for :users
+  resources :subscriptions
   resources :chatrooms, except: [:show]
 end
