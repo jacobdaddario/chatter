@@ -2,7 +2,7 @@
 	<% @chatrooms.each do |chatroom| %>
 		<div class="p-6 my-4 bg-gray-200 rounded-lg" data-controller="revealable">
 			<div class="flex" data-chatroom-id="<%= chatroom.id %>">
-				<%= link_to chatroom.name, "#", class: "flex-grow mr-6 font-medium text-lg text-gray-900 hover:underline", data: { behavior: "chatroom-name" } %>
+				<%= subscribe_or_show(current_user, chatroom) %>
 				<%= inline_svg_tag "more_options.svg", class: "flex-shrink-0 h-6 w-6 ml-2 text-gray-600 fill-current", data: { action: "click->revealable#toggle" } %>
 			</div>
 			<div class="hidden mt-2" data-target="revealable.revealedElement">
