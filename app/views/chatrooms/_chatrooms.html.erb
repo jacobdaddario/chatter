@@ -1,8 +1,8 @@
 <% unless @chatrooms.empty? %>
 	<% @chatrooms.each do |chatroom| %>
 		<div class="p-6 my-4 bg-gray-200 rounded-lg" data-controller="revealable">
-			<div class="flex" data-chatroom-id="<%= chatroom.id %>">
-				<%= subscribe_or_show(current_user, chatroom) %>
+			<div class="flex flex-no-wrap" data-chatroom-id="<%= chatroom.id %>">
+				<%= subscribe_or_show(current_user, chatroom)%>
 				<%= inline_svg_tag "more_options.svg", class: "flex-shrink-0 h-6 w-6 ml-2 text-gray-600 fill-current", data: { action: "click->revealable#toggle" } %>
 			</div>
 			<div class="hidden mt-2" data-target="revealable.revealedElement">

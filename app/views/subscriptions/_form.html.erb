@@ -1,8 +1,9 @@
-<div class="flex-grow mr-6" data-behavior="chatroom-name">
+<div class="flex-grow flex mr-6" data-behavior="chatroom-name">
+	<%= inline_svg_tag "plus_circle.svg", class: "flex-shrink-0 w-5 h-5 mr-1 mt-1 text-gray-600 fill-current" %>
+
 	<%= form_for(user.subscriptions.build, remote: true) do |f| %>
 		<%= f.hidden_field :chatroom_id, value: chatroom.id %>
 
-		<%= inline_svg_tag "plus_circle.svg", class: "inline w-5 h-5 mb-1 mr-2 text-gray-600 fill-current" %>
-		<%= f.submit chatroom.name, class: "inline font-medium text-lg text-gray-600 bg-transparent"%>
+		<%= f.submit chatroom.name, class: "whitespace-normal text-left font-medium text-lg text-gray-600 bg-transparent", data: { behavior: "chatroom-text" } %>
 	<% end %>
 </div>

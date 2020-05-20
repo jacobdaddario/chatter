@@ -29,7 +29,7 @@ export default class extends Controller {
     var oldText = document.querySelector(`[data-chatroom-id='${this.data.get("parent-id")}'`);
 
     if (!(oldText == null)) {
-      oldText.querySelector("[data-behavior='chatroom-name'")
+      oldText.querySelector("[data-behavior='chatroom-name']")
              .classList
              .remove("hidden");
     };
@@ -41,7 +41,7 @@ export default class extends Controller {
     var oldText = document.querySelector(`[data-chatroom-id='${this.data.get("parent-id")}'`);
 
     if (!(oldText == null)) {
-      var oldName = oldText.querySelector("[data-behavior='chatroom-name'").text;
+      var oldName = oldText.querySelector("[data-behavior='chatroom-text']").value;
       this.inputTarget.value = oldName
     } else {
       this.inputTarget.value = ""

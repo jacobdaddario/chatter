@@ -7,6 +7,9 @@ module.exports = {
     	},
       maxHeight: {
         '1/2-screen': '50vh',
+      },
+      maxWidth: {
+        '3/4': '75%',
       }
     },
   },
