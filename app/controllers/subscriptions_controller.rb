@@ -3,16 +3,24 @@ class SubscriptionsController < ApplicationController
 	before_action :authenticate_user!
 
 	def create
-		chatroom = Chatroom.find(params[:chatroom_id])
+		chatroom = Chatroom.find(params[:subscription][:chatroom_id])
 
-		current_user.subscriber(chatroom)
-		flash[:info] = "Successfully subscribed to the #{chatroom.name}."
+		current_user.subscribe(chatroom)
+		flash.now[:notice] = "Successfully subscribed to the #{chatroom.name}."
+
+		@chatrooms = Chatroom.all
+
+		respond_to :js
 	end
 
 	def destroy
 		chatroom = Subscription.find(params[:id]).chatroom
 
 		current_user.unsubscribe(chatroom)
-		flash[:info] = "Successfully unsubscribed from #{chatroom.name}."
+		flash.now[:notice] = "Successfully unsubscribed from #{chatroom.name}."
+
+		@chatrooms = Chatroom.all
+
+		respond_to :js
 	end
 end
