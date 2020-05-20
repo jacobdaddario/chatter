@@ -6,8 +6,16 @@
 				<%= inline_svg_tag "more_options.svg", class: "flex-shrink-0 h-6 w-6 ml-2 text-gray-600 fill-current", data: { action: "click->revealable#toggle" } %>
 			</div>
 			<div class="hidden mt-2" data-target="revealable.revealedElement">
-				<%= link_to "Edit", edit_chatroom_path(chatroom), remote: true, class: "link text-sm mr-6" %>
-				<%= link_to "Delete", chatroom_path(chatroom), method: :delete, remote: true, class: "link text-sm", data: { confirm: "Are you sure you'd like to delete #{chatroom.name}?" } %>
+				<% if Chatroom.where(user_id: current_user.id, chatroom_id: chatroom.id) %>
+					<%= form_with(model: current_user.subscriptions.find_by(chatroom_id: chatroom.id), method: :delete, remote: true, class: "inline") do |f| %>
+						<%= f.submit "Leave", class: "link bg-transparent text-sm mr-6 cursor-pointer" %>
+					<% end %>
+				<% end %>
+
+				<% if can? :manage, chatroom %>
+					<%= link_to "Edit", edit_chatroom_path(chatroom), remote: true, class: "link text-sm mr-6" %>
+					<%= link_to "Delete", chatroom_path(chatroom), method: :delete, remote: true, class: "link text-sm", data: { confirm: "Are you sure you'd like to delete #{chatroom.name}?" } %>
+				<% end %>
 			</div> 
 		</div>
 	<% end %>
