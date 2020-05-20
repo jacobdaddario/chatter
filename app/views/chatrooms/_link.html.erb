@@ -1,0 +1,8 @@
+<%= 
+	link_to(chatroom.name, "#", 
+	class: "flex-grow mr-6 font-medium text-lg text-gray-900 hover:underline", 
+	data: { reflex: "click->ChatroomReflex#join",
+					behavior: "chatroom-name",
+					id: chatroom.id
+				})
+%>

@@ -1,4 +1,4 @@
-<div class="flex items-center">
+<div class="flex flex-col items-center">
 	<div class="w-full" data-controller="revealable">
 		<div class="flex relative items-center justify-center card h-16 mt-4 shadow-sm">
 			<span class="flex-grow text-gray-600 font-light text-xl text-center">Chatrooms</span>
@@ -15,5 +15,15 @@
 				<%= render "chatrooms/chatrooms" %>
 			</div>
 		</div>
+	</div>
+	<div>
+		<% unless @active_chatroom.nil? %>
+			<%= @active_chatroom.name %>
+		<% else %>
+			<%= inline_svg_tag "chat_splash.svg", class: "w-1/2 h-auto mx-auto mt-16" %>
+			<p class="text text-sm text-center tracking-wide my-8 lg:text-xl lg:tracking-normal">
+				Join a chatroom using the dropdown above!
+			</p>
+		<% end %>
 	</div>
 </div>
