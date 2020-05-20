@@ -41,7 +41,12 @@ export default class extends Controller {
     var oldText = document.querySelector(`[data-chatroom-id='${this.data.get("parent-id")}'`);
 
     if (!(oldText == null)) {
-      var oldName = oldText.querySelector("[data-behavior='chatroom-text']").value;
+      if (oldText.querySelector("[data-behavior='chatroom-name']").nodeName == "DIV") {
+        var oldName = oldText.querySelector("[data-behavior='chatroom-text']").value;
+      } else {
+        var oldName = oldText.querySelector("[data-behavior='chatroom-name']").text;
+      };
+
       this.inputTarget.value = oldName
     } else {
       this.inputTarget.value = ""
