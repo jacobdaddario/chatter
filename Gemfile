@@ -58,3 +58,7 @@ gem "devise", "~> 4.7.0"
 gem "cancancan", "~> 3.0.0"
 
 gem "inline_svg", "~> 1.7.0"
+
+gem "redis", "~> 4.1"
+gem "cable_ready", "~> 4.1"
+gem "stimulus_reflex", "~> 3.2"
