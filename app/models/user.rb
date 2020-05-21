@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :subscriptions
 
   validates :authorization, inclusion: { in: [0, 1] }
+  validates :username, presence: true, length: { maximum: 80 }, uniqueness: true
 
   def admin?
   	authorization == 1
