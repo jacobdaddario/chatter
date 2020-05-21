@@ -21,7 +21,7 @@ export default class extends ApplicationReflexController {
    *
    *   error - error message from the server
    */
-
+   
   // beforeUpdate(element, reflex) {
   //  element.innerText = 'Updating...'
   // }

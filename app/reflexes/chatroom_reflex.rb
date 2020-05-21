@@ -20,8 +20,16 @@ class ChatroomReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com
+  delegate :current_user, to: :connection
 
   def join
     @active_chatroom = Chatroom.find_by(id: element.dataset[:id])
+
+    if current_user.subscribed?(@active_chatroom)
+      @active_chatroom
+    else
+      @active_chatroom = nil
+      flash[:alert] = "You must be subscribed to #{chatroom.name} to view it."
+    end
   end
 end

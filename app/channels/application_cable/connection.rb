@@ -10,7 +10,6 @@ module ApplicationCable
   	private
 
   		def find_verified_user
-  			# `find_by` is used since it returns nil if nothing is found, unlike `find`
   			if verified_user = env['warden'].user
   				verified_user
   			else
