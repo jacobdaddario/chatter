@@ -1,0 +1,22 @@
+<% unless @active_chatroom.nil? %>
+	<%= content_tag :h1, @active_chatroom.name, class: "text-2xl text-gray-900 my-4 text-center" %>
+	<div class="flex flex-col w-full h-full mb-12 bg-white border border-gray-300 rounded shadow-xl">
+		<div class="overflow-y-scroll flex-grow">
+			<% @active_chatroom.messages.each do |msg| %>
+				<div class="flex mx-2 my-6">
+					<%= content_tag :span, "#{msg.user.username}:", class: "flex-shrink-0 ml-4 text-gray-700 text-semibold" %>
+					<div class="max-w-xs sm:max-w-md md:max-w-xl ml-4">
+						<%= content_tag :p, msg.content, class: "text-gray-900 break-words" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+		<!-- Text input will go here with form input for sending messages. flex-shrink-0 -->
+	</div>
+<% else %>
+	<%= inline_svg_tag "chat_splash.svg", class: "w-2/5 h-auto mx-auto mt-16" %>
+	<p class="text text-sm text-center tracking-wide my-8 lg:text-xl lg:tracking-normal">
+		Join a chatroom using the dropdown above!
+	</p>
+<% end %>

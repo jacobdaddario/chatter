@@ -10,7 +10,10 @@ module.exports = {
       },
       maxWidth: {
         '3/4': '75%',
-      }
+      },
+      height: {
+        '3/5-screen': '60vh',
+      },
     },
   },
   variants: {

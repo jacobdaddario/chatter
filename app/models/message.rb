@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
-	has_one :user
-	has_one :chatroom
+	belongs_to :user
+	belongs_to :chatroom
 
 	validates :content, presence: true, length: { maximum: 280 }
 end

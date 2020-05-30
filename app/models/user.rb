@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :subscriptions
   has_many :chatrooms, through: :subscriptions
+  has_many :messages
 
   validates :authorization, inclusion: { in: [0, 1] }
   validates :username, presence: true, length: { maximum: 80 }, uniqueness: true

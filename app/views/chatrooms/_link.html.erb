@@ -1,7 +1,7 @@
-<div data-controller="chatroom">		
+<div data-controller="chatroom" class="flex-grow">		
 	<%= 
 		link_to(chatroom.name, "#", 
-		class: "flex-grow mr-6 font-medium text-lg text-gray-900 hover:underline", 
+		class: "mr-6 font-medium text-lg text-gray-900 hover:underline", 
 		data: { reflex: "click->ChatroomReflex#join",
 						behavior: "chatroom-name",
 						id: chatroom.id

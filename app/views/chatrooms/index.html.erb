@@ -16,14 +16,7 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<% unless @active_chatroom.nil? %>
-			<%= @active_chatroom.name %>
-		<% else %>
-			<%= inline_svg_tag "chat_splash.svg", class: "w-1/2 h-auto mx-auto mt-16" %>
-			<p class="text text-sm text-center tracking-wide my-8 lg:text-xl lg:tracking-normal">
-				Join a chatroom using the dropdown above!
-			</p>
-		<% end %>
+	<div class="w-full h-3/5-screen px-4">
+		<%= render "chatrooms/chatroom" %>
 	</div>
 </div>

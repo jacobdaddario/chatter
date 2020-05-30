@@ -29,7 +29,7 @@ class ChatroomReflex < ApplicationReflex
       @active_chatroom
     else
       @active_chatroom = nil
-      flash[:alert] = "You must be subscribed to #{chatroom.name} to view it."
+      flash[:alert] = "You must be subscribed to #{@active_chatroom.name} to view it."
     end
   end
 end
