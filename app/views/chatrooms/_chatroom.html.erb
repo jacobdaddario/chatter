@@ -4,8 +4,8 @@
 		<div class="overflow-y-scroll flex-grow">
 			<% @active_chatroom.messages.each do |msg| %>
 				<div class="flex mx-2 my-6">
-					<%= content_tag :span, "#{msg.user.username}:", class: "flex-shrink-0 ml-4 text-gray-700 text-semibold" %>
-					<div class="max-w-xs sm:max-w-md md:max-w-xl ml-4">
+					<%= content_tag :span, "#{msg.user.username}:", class: "ml-4 text-gray-700 text-semibold" %>
+					<div class="ml-4">
 						<%= content_tag :p, msg.content, class: "text-gray-900 break-words" %>
 					</div>
 				</div>
