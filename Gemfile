@@ -57,4 +57,4 @@ gem "devise", "~> 4.7.0"
 
 gem "cancancan", "~> 3.0.0"
 
-gem "inline_svg", "~> 1.7.0"
+gem "inline_svg", "~> 1.7.2"
